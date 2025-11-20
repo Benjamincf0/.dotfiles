@@ -24,6 +24,7 @@ source "$HOME/.cargo/env"
 alias ls="eza --group-directories-first -F --icons"
 alias ll="eza -l --group-directories-first -F --icons -h --git"
 alias lt="eza --tree --git-ignore"
+alias lla="eza -la --group-directories-first -F --icons -h --git"
 
 alias v="nvim"
 alias nv="neovide --frame buttonless"
