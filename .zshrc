@@ -1,5 +1,5 @@
 # env
-source ~/.env
+# source ~/.env
 
 # custom paths
 export PATH="/opt/homebrew/bin:$PATH"
@@ -66,7 +66,7 @@ eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 # bun completions
-[ -s "/Users/vincentliu/.bun/_bun" ] && source "/Users/vincentliu/.bun/_bun"
+[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
 # bun
 export BUN_INSTALL="$HOME/.bun"
@@ -77,10 +77,6 @@ export PATH="/opt/homebrew/sbin:$PATH"
 # Add the Qt directory to the PATH and CMAKE_PREFIX_PATH
 # export CMAKE_PREFIX_PATH="$CMAKE_PREFIX_PATH:/opt/homebrew/opt/qt@5"
 # export PKG_CONFIG_PATH="$PKG_CONFIG_PATH:/opt/homebrew/opt/qt@5/lib/pkgconfig"
-
-# flutter
-export PATH="/Users/vincentliu/dev/flutter/bin:$PATH"
-export PATH="/Users/vincentliu/.pub-cache/bin:$PATH"
 
 # dotnet
 export DOTNET_ROOT="/usr/local/share/dotnet"
@@ -101,18 +97,12 @@ source "/opt/homebrew/share/zsh-autosuggestions/zsh-autosuggestions.zsh"
 export ZSH_AUTOSUGGEST_STRATEGY=(history completion)
 bindkey '^y' autosuggest-accept
 
-if type brew &>/dev/null; then
-    FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
-
-    autoload -Uz compinit
-    compinit
-fi
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/vincentliu/dev/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/vincentliu/dev/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/vincentliu/dev/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/vincentliu/dev/google-cloud-sdk/completion.zsh.inc'; fi
+# if type brew &>/dev/null; then
+#     FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
+#
+#     autoload -Uz compinit
+#     compinit
+# fi
 
 # some options
 export HISTFILE="$HOME/.zsh_history"
@@ -136,15 +126,29 @@ export VISUAL=nvim
 export EDITOR="$VISUAL"
 
 # Load Angular CLI autocompletion.
-source <(ng completion script)
 
 eval $(thefuck --alias)
 
 # pnpm
-export PNPM_HOME="/Users/vincentliu/Library/pnpm"
+export PNPM_HOME="$HOME/Library/pnpm"
 case ":$PATH:" in
 *":$PNPM_HOME:"*) ;;
 *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
 export PATH="/opt/homebrew/opt/openjdk@21/bin:$PATH"
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/opt/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/opt/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
