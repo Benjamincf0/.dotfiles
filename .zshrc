@@ -21,6 +21,8 @@ source "$HOME/.cargo/env"
 # export CPPFLAGS="-I/opt/homebrew/opt/llvm/include"
 
 # alias
+alias ..="cd .."
+alias l="ls"
 alias ls="eza --group-directories-first -F --icons"
 alias ll="eza -l --group-directories-first -F --icons -h --git"
 alias lt="eza --tree --git-ignore"
