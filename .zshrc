@@ -53,7 +53,7 @@ alias px="pnpx"
 # java
 alias ns_java="ns -p zulu maven git"
 
-alias mimi="kitten ssh -i ~/.ssh/mcgill_mimi_server 'mliu8@mimi.cs.mcgill.ca'"
+alias mimi="kitten ssh mimi"
 
 alias g="git"
 alias gm="git add . && git commit -m"
@@ -158,3 +158,9 @@ unset __conda_setup
 
 export SDKMAN_DIR="$HOME/.sdkman"
 [[ -s "$SDKMAN_DIR/bin/sdkman-init.sh" ]] && source "$SDKMAN_DIR/bin/sdkman-init.sh"
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+[ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/benjamin/.lmstudio/bin"
+# End of LM Studio CLI section
