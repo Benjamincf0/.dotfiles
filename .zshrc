@@ -22,7 +22,7 @@ source "$HOME/.cargo/env"
 
 # alias
 alias ..="cd .."
-alias l="ls"
+alias l="ls -la"
 alias ls="eza --group-directories-first -F --icons"
 alias ll="eza -l --group-directories-first -F --icons -h --git"
 alias lt="eza --tree --git-ignore"
