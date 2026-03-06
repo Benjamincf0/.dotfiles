@@ -13,7 +13,7 @@ export PATH="/Library/PostgreSQL/16/bin:$PATH"
 export PGDATA="/Library/PostgreSQL/16/data"
 
 # cargo
-source "$HOME/.cargo/env"
+# source "$HOME/.cargo/env"
 
 # llvm
 # export PATH="/opt/homebrew/opt/llvm/bin:$PATH"
@@ -22,7 +22,7 @@ source "$HOME/.cargo/env"
 
 # alias
 alias ..="cd .."
-alias l="ls -la"
+alias l="eza -lagB --group-directories-first -F --icons -h --git"
 alias ls="eza --group-directories-first -F --icons"
 alias ll="eza -l --group-directories-first -F --icons -h --git"
 alias lt="eza --tree --git-ignore"
@@ -49,6 +49,8 @@ alias ctetris="TERM=screen-256color ~/dev/Codes/C/ncurses/tetris/bin/tetris"
 
 alias pn="pnpm"
 alias px="pnpx"
+
+alias pulltestfiles="./update.unit.test.files.sh"
 
 # java
 alias ns_java="ns -p zulu maven git"
@@ -130,7 +132,7 @@ export EDITOR="$VISUAL"
 
 # Load Angular CLI autocompletion.
 
-eval $(thefuck --alias)
+# eval $(thefuck --alias)
 
 # pnpm
 export PNPM_HOME="$HOME/Library/pnpm"
