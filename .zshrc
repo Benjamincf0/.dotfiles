@@ -166,3 +166,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Added by LM Studio CLI (lms)
 export PATH="$PATH:/Users/benjamin/.lmstudio/bin"
 # End of LM Studio CLI section
+
+yoink() {
+  osascript -e "set the clipboard to (POSIX file \"$PWD/$1\")"
+}
